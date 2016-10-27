@@ -1,3 +1,4 @@
+export Code from './Code'
 export { STYLES } from './constants'
 export Controller from './Controller'
 export Cover from './Cover'

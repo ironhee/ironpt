@@ -1,0 +1,22 @@
+{
+  "name": "web",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "http://ironhee.github.io/ironpt/",
+  "devDependencies": {
+    "gh-pages": "^0.11.0",
+    "react-scripts": "0.7.0"
+  },
+  "dependencies": {
+    "ironpt": "../",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "echo ok",
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build"
+  }
+}

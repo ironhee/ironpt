@@ -21,8 +21,7 @@ Cover.contextTypes = {
 export default Radium(Cover)
 
 const styles = {
-  base: {
-  },
-  [STYLES.SIMPLE]: {
-  }
+  base: {},
+  [STYLES.SIMPLE]: {},
+  [STYLES.DEVELOPER]: {}
 }

@@ -27,9 +27,12 @@ const styles = {
   },
   [STYLES.SIMPLE]: {
     margin: '0 20px 20px 20px',
-    padding: 0,
     fontSize: '2.5em',
-    fontFamilly: 'helvetica',
     color: '#555'
+  },
+  [STYLES.DEVELOPER]: {
+    margin: '0 20px 30px 20px',
+    fontSize: '2em',
+    color: '#fdd'
   }
 }

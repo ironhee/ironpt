@@ -27,5 +27,10 @@ const styles = {
     fontSize: '2em',
     marginLeft: '1em',
     marginBottom: '1em'
+  },
+  [STYLES.DEVELOPER]: {
+    fontSize: '2em',
+    marginLeft: '1em',
+    marginBottom: '1em'
   }
 }

@@ -9,7 +9,6 @@ it('renders', () => {
     <Controller>
       <Presentation>
         <Slide />
-        <Slide />
       </Presentation >
     </Controller>
   )

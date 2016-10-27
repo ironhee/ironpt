@@ -27,9 +27,12 @@ const styles = {
   },
   [STYLES.SIMPLE]: {
     margin: '0 20px 30px 20px',
-    padding: 0,
-    fontSize: '5em',
-    fontFamilly: '바른고딕 helvetica',
+    fontSize: '4em',
     borderBottom: '1px solid #555'
+  },
+  [STYLES.DEVELOPER]: {
+    margin: '0 20px 30px 20px',
+    fontSize: '4em',
+    color: '#f44'
   }
 }

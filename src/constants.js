@@ -1,3 +1,4 @@
 export const STYLES = {
-  SIMPLE: 'simple'
+  SIMPLE: 'simple',
+  DEVELOPER: 'DEVELOPER'
 }

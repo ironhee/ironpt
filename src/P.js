@@ -27,7 +27,10 @@ const styles = {
   },
   [STYLES.SIMPLE]: {
     margin: '10px 20px',
-    fontSize: '2em',
-    fontFamilly: 'helvetica'
+    fontSize: '2em'
+  },
+  [STYLES.DEVELOPER]: {
+    margin: '10px 20px',
+    fontSize: '2em'
   }
 }

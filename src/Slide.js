@@ -32,7 +32,12 @@ const styles = {
     height: '100%'
   },
   [STYLES.SIMPLE]: {
-    background: '#eee',
+    background: '#fff',
+    padding: '40px'
+  },
+  [STYLES.DEVELOPER]: {
+    background: '#222',
+    color: '#fff',
     padding: '40px'
   },
   // status

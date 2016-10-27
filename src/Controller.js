@@ -8,21 +8,36 @@ class Controller extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      slideIndex: props.defaultSlide || 0,
+      slideIndex: props.defaultSlideIndex - 1 || 0,
       style: props.defaultStyle || STYLES.SIMPLE,
-      slideLength: props.children.props.children.length
+      slideLength: 0
     }
     this.onClick = this.onClick.bind(this)
     this.onKeyDown = this.onKeyDown.bind(this)
     this.onNextSlide = this.onNextSlide.bind(this)
     this.onPrevSlide = this.onPrevSlide.bind(this)
+    this.onRandomStyle = this.onRandomStyle.bind(this)
   }
 
   getChildContext () {
     return {
       style: this.state.style,
-      slideIndex: this.state.slideIndex
+      slideIndex: this.state.slideIndex,
+      slideLength: this.state.slideLength
     }
+  }
+
+  componentDidMount () {
+    if (!this.$controller) return
+    const presentationChildren = this
+      .$controller
+      .getElementsByClassName('ironhee-pt__presentation')[0]
+      .children
+    const slides = fp.filter(el => el.className === 'ironhee-pt__slide')(presentationChildren)
+
+    this.setState({
+      slideLength: slides.length
+    })
   }
 
   selectSlide (slideIndex) {
@@ -33,7 +48,6 @@ class Controller extends Component {
   }
 
   onClick (e) {
-    e.preventDefault()
     this.$input.focus()
   }
 
@@ -45,7 +59,20 @@ class Controller extends Component {
       case 'ArrowRight':
         this.onNextSlide()
         break
+      case 'ArrowUp':
+        this.onRandomStyle()
+        break
+      case 'ArrowDown':
+        this.onRandomStyle()
+        break
     }
+  }
+
+  onRandomStyle () {
+    const { style } = this.state
+    this.setState({
+      style: fp.sample(fp.omitBy(val => val === style)(STYLES))
+    })
   }
 
   onNextSlide () {
@@ -66,7 +93,9 @@ class Controller extends Component {
 
   render () {
     const { children } = this.props
-    const { slideIndex, slideLength, style } = this.state
+    const { slideIndex, slideLength } = this.state
+    const hasPrevSlide = slideIndex - 1 >= 0
+    const hasNextSlide = slideIndex + 1 < slideLength
 
     return (
       <div
@@ -74,41 +103,38 @@ class Controller extends Component {
         style={controllerStyle}
         onClick={this.onClick}
         onKeyDown={this.onKeyDown}
+        ref={(c) => { this.$controller = c }}
       >
-        <children.type
-          {...children.props}
-          slideIndex={slideIndex}
-          style={style}
-        />
+        { children }
+
         <input
           type='text'
           ref={(c) => { this.$input = c }}
           style={hiddenInputStyle}
         />
+
         <div
           style={[
             buttonStyles.base,
-            prevButtonStyles.base
+            prevButtonStyles.base,
+            ...hasPrevSlide ? [] : [buttonStyles.disabled]
           ]}
           key='prev'
           onClick={this.onPrevSlide}
         >
           prev
         </div>
+
         <div
           style={[
             buttonStyles.base,
-            nextButtonStyles.base
+            nextButtonStyles.base,
+            ...hasNextSlide ? [] : [buttonStyles.disabled]
           ]}
           key='next'
           onClick={this.onNextSlide}
         >
           next
-        </div>
-        <div
-          style={indexStyle.base}
-        >
-          { slideIndex + 1 } / { slideLength }
         </div>
       </div>
     )
@@ -122,7 +148,8 @@ Controller.propTypes = {
 
 Controller.childContextTypes = {
   style: React.PropTypes.string.isRequired,
-  slideIndex: React.PropTypes.number.isRequired
+  slideIndex: React.PropTypes.number.isRequired,
+  slideLength: React.PropTypes.number.isRequired
 }
 
 export default Radium(Controller)
@@ -161,6 +188,11 @@ const buttonStyles = {
     ':hover': {
       opacity: '0.5'
     }
+  },
+  disabled: {
+    ':hover': {
+      opacity: '0'
+    }
   }
 }
 
@@ -173,15 +205,5 @@ const prevButtonStyles = {
 const nextButtonStyles = {
   base: {
     right: 0
-  }
-}
-
-const indexStyle = {
-  base: {
-    bottom: 0,
-    width: '100%',
-    textAlign: 'center',
-    position: 'absolute',
-    fontSize: '1.5em'
   }
 }
