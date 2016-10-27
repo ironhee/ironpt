@@ -1,5 +1,6 @@
 import React from 'react'
 import Radium from 'radium'
+import { STYLES } from './constants'
 
 const H1 = ({ children }, { style }) => (
   <h2
@@ -24,7 +25,7 @@ const styles = {
     margin: 0,
     padding: 0
   },
-  simple: {
+  [STYLES.SIMPLE]: {
     margin: '0 20px 30px 20px',
     padding: 0,
     fontSize: '5em',

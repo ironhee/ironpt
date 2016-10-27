@@ -1,5 +1,6 @@
 import React from 'react'
 import Radium from 'radium'
+import { STYLES } from './constants'
 
 const Pragraph = ({ children }, { style }) => (
   <p
@@ -24,7 +25,7 @@ const styles = {
     margin: 0,
     padding: 0
   },
-  simple: {
+  [STYLES.SIMPLE]: {
     margin: '10px 20px',
     fontSize: '2em',
     fontFamilly: 'helvetica'

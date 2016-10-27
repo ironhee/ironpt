@@ -1,5 +1,6 @@
 import React from 'react'
 import Radium from 'radium'
+import { STYLES } from './constants'
 
 const Cover = ({ children }, { style }) => (
   <ul
@@ -22,6 +23,6 @@ export default Radium(Cover)
 const styles = {
   base: {
   },
-  simple: {
+  [STYLES.SIMPLE]: {
   }
 }

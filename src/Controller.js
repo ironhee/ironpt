@@ -2,13 +2,14 @@ import React, { Component } from 'react'
 import Radium from 'radium'
 import fp from 'lodash/fp'
 import assert from 'assert'
+import { STYLES } from './constants'
 
 class Controller extends Component {
   constructor (props) {
     super(props)
     this.state = {
       slideIndex: props.defaultSlide || 0,
-      style: props.defaultStyle || 'simple',
+      style: props.defaultStyle || STYLES.SIMPLE,
       slideLength: props.children.props.children.length
     }
     this.onClick = this.onClick.bind(this)

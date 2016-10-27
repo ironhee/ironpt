@@ -1,5 +1,6 @@
 import React from 'react'
 import Radium from 'radium'
+import { STYLES } from './constants'
 
 const Cover = ({ children }, { style }) => (
   <div
@@ -25,7 +26,7 @@ const styles = {
     width: '100%',
     height: '100%'
   },
-  simple: {
+  [STYLES.SIMPLE]: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center'
