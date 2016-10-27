@@ -7,7 +7,7 @@
     "test": "node bin/test.js --env=jsdom",
     "build": "babel --ignore *.test.js -d lib src",
     "clean": "rimraf lib",
-    "lint": "standard",
+    "lint": "standard src",
     "prepublish": "npm run clean && npm run build"
   },
   "author": "ironhee",
