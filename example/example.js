@@ -1,18 +1,3 @@
-[![Build Status](https://travis-ci.org/ironhee/ironpt.svg?branch=master)](https://travis-ci.org/ironhee/ironpt)
-
-# Ironpt
-
-Create presentation with react component.
-
-# Install
-
-```bash
-npm install -S ironpt
-```
-
-# Usage
-
-```js
 import React from 'react'
 import {
   Controller,
@@ -57,4 +42,3 @@ const App = () => (
 )
 
 export default App
-```
