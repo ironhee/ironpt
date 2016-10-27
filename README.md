@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/ironhee/ironpt.svg?branch=master)](https://travis-ci.org/ironhee/ironpt)
+[![Build Status](https://travis-ci.org/ironhee/Ayun.svg?branch=master)](https://travis-ci.org/ironhee/Ayun)
 
 # Ironpt
 
@@ -7,7 +7,7 @@ Create presentation with react component.
 # Install
 
 ```bash
-npm install -S ironpt
+npm install -S Ayun
 ```
 
 # Usage
@@ -26,7 +26,7 @@ import {
   Li,
   P,
   STYLES
-} from 'ironpt'
+} from 'Ayun'
 
 const MyPresentation = () => (
   <Presentation
