@@ -1,7 +1,7 @@
 {
   "name": "ironpt",
-  "version": "0.0.0",
-  "description": "Presentation library for sunrin network day 201",
+  "version": "0.0.1",
+  "description": "Presentation library created by React.",
   "main": "lib",
   "scripts": {
     "test": "node bin/test.js --env=jsdom",
