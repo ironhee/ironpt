@@ -28,7 +28,6 @@ const TutorialPresentation = () => (
     <Slide>
       <H1>Move</H1>
       <P>Stroke ← & → to move slide</P>
-      <P>or click each side of slide</P>
     </Slide>
 
     {/* Style */}
