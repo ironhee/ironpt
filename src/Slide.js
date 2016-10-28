@@ -1,7 +1,7 @@
 import React from 'react'
 
-const Slide = ({ children }) => (
-  <div className='ironpt__slide'>
+const Slide = ({ children, ...props }) => (
+  <div className='ironpt__slide' {...props}>
     { children }
   </div>
 )

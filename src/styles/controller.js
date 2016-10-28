@@ -11,6 +11,7 @@ const controller = (
       position: 'relative',
       width: '100%',
       height: '100%',
+      boxSizing: 'border-box',
 
       '.ironpt__input-for-keydown': {
         width: 0,

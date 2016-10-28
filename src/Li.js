@@ -1,7 +1,7 @@
 import React from 'react'
 
-const Li = ({ children }) => (
-  <li className='ironpt__li'>
+const Li = ({ children, ...props }) => (
+  <li className='ironpt__li' {...props}>
     { children }
   </li>
 )

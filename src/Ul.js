@@ -1,7 +1,7 @@
 import React from 'react'
 
-const Cover = ({ children }) => (
-  <ul className='ironpt__ul'>
+const Cover = ({ children, ...props }) => (
+  <ul className='ironpt__ul' {...props}>
     { children }
   </ul>
 )

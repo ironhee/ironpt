@@ -29,7 +29,7 @@ class Presentation extends Component {
   }
 
   render () {
-    const { children, style } = this.props
+    const { children, style, ...props } = this.props
     const { slideIndex } = this.context
     return (
       <div
@@ -37,6 +37,7 @@ class Presentation extends Component {
           'ironpt__presentation',
           style ? style.props.name : null
         )}
+        {...props}
       >
         <Scale
           width={960}

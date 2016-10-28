@@ -1,7 +1,7 @@
 import React from 'react'
 
-const P = ({ children }) => (
-  <p className='ironpt__p'>
+const P = ({ children, ...props }) => (
+  <p className='ironpt__p' {...props}>
     { children }
   </p>
 )

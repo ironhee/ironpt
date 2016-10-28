@@ -1,7 +1,7 @@
 import React from 'react'
 
-const H2 = ({ children }) => (
-  <h3 className='ironpt__h2'>
+const H2 = ({ children, ...props }) => (
+  <h3 className='ironpt__h2' {...props}>
     { children }
   </h3>
 )

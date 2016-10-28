@@ -84,19 +84,14 @@ class Controller extends Component {
   }
 
   render () {
-    const { children } = this.props
+    const { children, ...props } = this.props
     return (
       <div
         className='ironpt__controller'
         onClick={this.onClick}
         onKeyDown={this.onKeyDown}
         ref={(c) => { this.$controller = c }}
-        style={{
-          boxSizing: 'border-box',
-          width: '100%',
-          height: '100%',
-          position: 'relative'
-        }}
+        {...props}
       >
         { children }
         <input

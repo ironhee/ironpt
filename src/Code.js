@@ -3,8 +3,11 @@ import Radium from 'radium'
 import SyntaxHighlighter from 'react-syntax-highlighter'
 import { xcode, xt256 } from 'react-syntax-highlighter/dist/styles'
 
-const Code = ({ children, language }, { styleName }) => (
-  <div className='ironpt__code'>
+const Code = ({ children, language, ...props }, { styleName }) => (
+  <div
+    className='ironpt__code'
+    {...props}
+  >
     <SyntaxHighlighter
       language={language}
       style={syntaxStyles[styleName]}
