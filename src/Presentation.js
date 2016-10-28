@@ -26,7 +26,7 @@ class Presentation extends Component {
   }
 
   getSlidesScale () {
-    if (!this.$presentation || this.$slides) return 1
+    if (!this.$presentation || !this.$slides) return 1
 
     const minScale = 0.2
     const maxScale = 1.5
