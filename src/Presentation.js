@@ -26,7 +26,7 @@ class Presentation extends Component {
     const { style, slideIndex } = this.context
     return (
       <div
-        className='ironhee-pt__presentation'
+        className='ironpt__presentation'
         style={[
           styles.base,
           styles[style]
@@ -39,7 +39,7 @@ class Presentation extends Component {
           maxScale={1.5}
         >
           <div
-            className='ironhee-pt__slides'
+            className='ironpt__slides'
             style={slidesStyle}
             ref={(c) => { this.$slides = c }}
           >

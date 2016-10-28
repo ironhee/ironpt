@@ -4,7 +4,7 @@ import { STYLES } from './constants'
 
 const Pragraph = ({ children }, { style }) => (
   <p
-    className='ironhee-pt__paragraph'
+    className='ironpt__paragraph'
     style={[
       styles.base,
       styles[style]

@@ -4,6 +4,7 @@ import { STYLES } from './constants'
 
 const SlideIndex = ({ slideIndex, slideLength }, { style }) => (
   <div
+    className='ironpt__slide-index'
     style={[
       styles.base,
       styles[style]

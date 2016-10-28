@@ -4,7 +4,7 @@ import { STYLES } from './constants'
 
 const Slide = ({ children }, { style }) => (
   <div
-    className='ironhee-pt__slide'
+    className='ironpt__slide'
     style={[
       styles.base,
       styles[style]

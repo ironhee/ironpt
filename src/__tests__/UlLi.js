@@ -3,20 +3,18 @@ import renderer from 'react-test-renderer'
 import Controller from '../Controller'
 import Presentation from '../Presentation'
 import Slide from '../Slide'
-import Code from '../Code'
+import Ul from '../Ul'
+import Li from '../Li'
 
 it('renders', () => {
   renderer.create(
     <Controller>
       <Presentation>
         <Slide>
-          <Code>
-            {`
-const a = 1
-const b = 2
-console.log(a + b)
-            `}
-          </Code>
+          <Ul>
+            <Li>hello world</Li>
+            <Li>hello world</Li>
+          </Ul>
         </Slide>
       </Presentation>
     </Controller>

@@ -4,7 +4,7 @@ import { STYLES } from './constants'
 
 const H1 = ({ children }, { style }) => (
   <h2
-    className='ironhee-pt__h1'
+    className='ironpt__h1'
     style={[
       styles.base,
       styles[style]

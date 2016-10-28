@@ -30,12 +30,12 @@ class Scale extends Component {
     const { children, width, height } = this.props
     return (
       <div
-        className='ironhee-pt__scale'
+        className='ironpt__scale'
         style={style}
         ref={(c) => { this.$scale = c }}
       >
         <div
-          className='ironhee-pt__scale__content'
+          className='ironpt__scale__content'
           style={getContentStyle({ scale, width, height })}
           ref={(c) => { this.$scaleContent = c }}
         >

@@ -31,9 +31,9 @@ class Controller extends Component {
     if (!this.$controller) return
     const presentationChildren = this
       .$controller
-      .querySelector('.ironhee-pt__presentation .ironhee-pt__slides')
+      .querySelector('.ironpt__presentation .ironpt__slides')
       .children
-    const slides = fp.filter(el => el.className === 'ironhee-pt__slide')(presentationChildren)
+    const slides = fp.filter(el => el.className === 'ironpt__slide')(presentationChildren)
     this.setState({ slideLength: slides.length })
 
     // Touch support
@@ -106,7 +106,7 @@ class Controller extends Component {
     const { children } = this.props
     return (
       <div
-        className='ironhee-pt__controller'
+        className='ironpt__controller'
         style={controllerStyle}
         onClick={this.onClick}
         onKeyDown={this.onKeyDown}

@@ -4,7 +4,7 @@ import { STYLES } from './constants'
 
 const Cover = ({ children }, { style }) => (
   <li
-    className='ironhee-pt__li'
+    className='ironpt__li'
     style={[
       styles.base,
       styles[style]
