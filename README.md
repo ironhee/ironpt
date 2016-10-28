@@ -94,7 +94,6 @@ __Usage__
 
 ```js
 <Controller
-  defaultStyle={STYLES.SIMPLE}
   defaultSlideIndex={1}
 >
   {/* Presentation here */}
@@ -105,13 +104,18 @@ __Usage__
 
 Presentation component.
 
+__Props__
+- `style` - Style: style of the presentation.
+  - `simple`
+  - `developer`
+
 __ChildContext__
 - `styleName` - String: Name of the style.
 
 __Usage__
 
 ```js
-<Presentation>
+<Presentation style={simple}>
   {/* Slides here */}
 </Presentation>
 ```
