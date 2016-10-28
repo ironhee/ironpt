@@ -4,4 +4,4 @@ node_js:
 script:
   - npm run lint
   - npm run test
-  - cd web && npm run build && npm run deploy
+  - cd web && npm run install && npm run build && npm run deploy

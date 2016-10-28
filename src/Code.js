@@ -2,26 +2,13 @@ import React from 'react'
 import Radium from 'radium'
 import SyntaxHighlighter from 'react-syntax-highlighter'
 import { xcode, xt256 } from 'react-syntax-highlighter/dist/styles'
-import { STYLES } from './constants'
 
-const Code = ({ children, language }, { style }) => (
-  <div
-    className='ironpt__code'
-    style={[
-      styles.base,
-      styles[style]
-    ]}
-  >
+const Code = ({ children, language }, { styleName }) => (
+  <div className='ironpt__code'>
     <SyntaxHighlighter
       language={language}
-      style={syntaxStyles[style]}
-      codeTagProps={{
-        style: Object.assign(
-          {},
-          codeStyles.base,
-          codeStyles[style]
-        )
-      }}
+      style={syntaxStyles[styleName]}
+      codeTagProps={codeStyles[styleName]}
     >
       {children}
     </SyntaxHighlighter>
@@ -29,34 +16,23 @@ const Code = ({ children, language }, { style }) => (
 )
 
 Code.contextTypes = {
-  style: React.PropTypes.string.isRequired
+  styleName: React.PropTypes.string.isRequired
 }
 
 export default Radium(Code)
 
-const styles = {
-  base: {},
-  [STYLES.SIMPLE]: {
-    margin: '10px 20px'
-  },
-  [STYLES.DEVELOPER]: {
-    margin: '10px 20px'
-  }
-}
-
 const codeStyles = {
-  base: {},
-  [STYLES.SIMPLE]: {
+  simple: {
     fontFamily: 'monospace',
     fontSize: '24px'
   },
-  [STYLES.DEVELOPER]: {
+  developer: {
     fontFamily: 'monospace',
     fontSize: '24px'
   }
 }
 
 const syntaxStyles = {
-  [STYLES.SIMPLE]: xcode,
-  [STYLES.DEVELOPER]: xt256
+  simple: xcode,
+  developer: xt256
 }

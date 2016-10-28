@@ -1,28 +1,24 @@
 import React, { Component } from 'react'
-import Radium from 'radium'
 import fp from 'lodash/fp'
 import assert from 'assert'
 import Hammer from 'hammerjs'
-import { STYLES } from './constants'
+import controllerStyle from './styles/controller'
 
 class Controller extends Component {
   constructor (props) {
     super(props)
     this.state = {
       slideIndex: props.defaultSlideIndex - 1 || 0,
-      style: props.defaultStyle || STYLES.SIMPLE,
       slideLength: 0
     }
     this.onClick = this.onClick.bind(this)
     this.onKeyDown = this.onKeyDown.bind(this)
     this.onNextSlide = this.onNextSlide.bind(this)
     this.onPrevSlide = this.onPrevSlide.bind(this)
-    this.onRandomStyle = this.onRandomStyle.bind(this)
   }
 
   getChildContext () {
     return {
-      style: this.state.style,
       slideIndex: this.state.slideIndex
     }
   }
@@ -41,16 +37,12 @@ class Controller extends Component {
     this.hammer.get('swipe').set({ direction: Hammer.DIRECTION_ALL })
     this.hammer.on('swipeleft', this.onNextSlide)
     this.hammer.on('swiperight', this.onPrevSlide)
-    this.hammer.on('swipeup', this.onRandomStyle)
-    this.hammer.on('swipedown', this.onRandomStyle)
   }
 
   componentWillUnmount () {
     if (!this.$controller) return
     this.hammer.off('swipeleft', this.onNextSlide)
     this.hammer.off('swiperight', this.onPrevSlide)
-    this.hammer.off('swipeup', this.onRandomStyle)
-    this.hammer.off('swipedown', this.onRandomStyle)
   }
 
   selectSlide (slideIndex) {
@@ -72,18 +64,7 @@ class Controller extends Component {
       case 'ArrowRight':
         this.onNextSlide()
         break
-      case 'ArrowUp':
-      case 'ArrowDown':
-        this.onRandomStyle()
-        break
     }
-  }
-
-  onRandomStyle () {
-    const { style } = this.state
-    this.setState({
-      style: fp.sample(fp.omitBy(val => val === style)(STYLES))
-    })
   }
 
   onNextSlide () {
@@ -107,49 +88,35 @@ class Controller extends Component {
     return (
       <div
         className='ironpt__controller'
-        style={controllerStyle}
         onClick={this.onClick}
         onKeyDown={this.onKeyDown}
         ref={(c) => { this.$controller = c }}
+        style={{
+          boxSizing: 'border-box',
+          width: '100%',
+          height: '100%',
+          position: 'relative'
+        }}
       >
         { children }
-
         <input
+          className='ironpt__input-for-keydown'
           type='text'
           ref={(c) => { this.$input = c }}
-          style={hiddenInputStyle}
         />
+        { controllerStyle }
       </div>
     )
   }
 }
 
 Controller.propTypes = {
-  defaultSlide: React.PropTypes.number,
+  defaultSlideIndex: React.PropTypes.number,
   defaultStyle: React.PropTypes.string
 }
 
 Controller.childContextTypes = {
-  style: React.PropTypes.string.isRequired,
   slideIndex: React.PropTypes.number.isRequired
 }
 
-export default Radium(Controller)
-
-const controllerStyle = {
-  boxSizing: 'border-box',
-  width: '100%',
-  height: '100%',
-  position: 'relative'
-}
-
-const hiddenInputStyle = {
-  width: 0,
-  height: 0,
-  position: 'absolute',
-  outline: 'none',
-  border: 'none',
-  margin: 0,
-  padding: 0,
-  boxShadow: 'none'
-}
+export default Controller

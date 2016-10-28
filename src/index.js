@@ -1,5 +1,4 @@
 export Code from './Code'
-export { STYLES } from './constants'
 export Controller from './Controller'
 export Cover from './Cover'
 export H1 from './H1'
@@ -9,3 +8,6 @@ export P from './P'
 export Presentation from './Presentation'
 export Slide from './Slide'
 export Ul from './Ul'
+
+export simple from './styles/simple'
+export developer from './styles/developer'

@@ -76,12 +76,10 @@ ReactDOM.render(
 
 # API
 
-## `STYLES`
+## Styles
 
-Style contants.
-
-- `SIMPLE`
-- `DEVELOPER`
+- `simple`
+- `developer`
 
 ## `<Controller>`
 
@@ -89,11 +87,9 @@ Controller of presentation component.
 Handling __touch__, __keyboard__ events.
 
 __Props__
-- `defaultStyle` - String: Initial style of presentation.
 - `defaultSlideIndex` - Number: Initial index of slides.
 
 __ChildContext__
-- `style` - String: Style of presentation.
 - `slideIndex` - Number: Index of slides.
 
 __Usage__
@@ -110,6 +106,9 @@ __Usage__
 ## `<Presentation>`
 
 Presentation component.
+
+__ChildContext__
+- `styleName` - String: Name of the style.
 
 __Usage__
 

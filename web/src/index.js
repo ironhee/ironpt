@@ -11,12 +11,12 @@ import {
   Li,
   P,
   Code,
-  STYLES
+  simple
 } from 'ironpt'
 import './index.css'
 
 const TutorialPresentation = () => (
-  <Presentation>
+  <Presentation style={simple}>
     <Slide>
       <Cover>
         <H1>Tutorial</H1>
@@ -31,28 +31,16 @@ const TutorialPresentation = () => (
       <P>Or swipe ← & → direction</P>
     </Slide>
 
-    {/* Style */}
-    <Slide>
-      <H1>Change styles</H1>
-      <P>Stroke ↑ & ↓ to change style</P>
-      <P>Or swipe ↑ & ↓ direction</P>
-    </Slide>
-
     {/* Controller & Presentation */}
     <Slide>
       <H1>Controller & Presentation</H1>
       <Code language='jsx'>
         {`
 const constroller = (
-  <Controller
-    defaultStyle={STYLES.DEVELOPER}
-  >
-    <Presentation>
+  <Controller>
+    <Presentation style={simple}>
       <Slide>
         <H1>Hello world</H1>
-      </Slide>
-      <Slide>
-        <H1>Bye world</H1>
       </Slide>
     </Presentation>
   </Controller>
@@ -65,15 +53,10 @@ const constroller = (
         width: '100%',
         height: '100%'
       }}>
-        <Controller
-          defaultStyle={STYLES.DEVELOPER}
-        >
-          <Presentation>
+        <Controller>
+          <Presentation style={simple}>
             <Slide>
               <H1>Hello world</H1>
-            </Slide>
-            <Slide>
-              <H1>Bye world</H1>
             </Slide>
           </Presentation>
         </Controller>
@@ -182,13 +165,12 @@ const App = () => (
   <div
     className='App'
     style={{
-      display: 'border-box',
+      boxSizing: 'border-box',
       width: window ? window.innerWidth : 0,
       height: window ? window.innerHeight : 0
     }}
   >
     <Controller
-      defaultStyle={STYLES.SIMPLE}
       defaultSlideIndex={2}
     >
       <TutorialPresentation />

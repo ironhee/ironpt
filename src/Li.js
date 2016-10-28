@@ -1,36 +1,9 @@
 import React from 'react'
-import Radium from 'radium'
-import { STYLES } from './constants'
 
-const Cover = ({ children }, { style }) => (
-  <li
-    className='ironpt__li'
-    style={[
-      styles.base,
-      styles[style]
-    ]}
-  >
+const Li = ({ children }) => (
+  <li className='ironpt__li'>
     { children }
   </li>
 )
 
-Cover.contextTypes = {
-  style: React.PropTypes.string.isRequired
-}
-
-export default Radium(Cover)
-
-const styles = {
-  base: {
-  },
-  [STYLES.SIMPLE]: {
-    fontSize: '2em',
-    marginLeft: '1em',
-    marginBottom: '1em'
-  },
-  [STYLES.DEVELOPER]: {
-    fontSize: '2em',
-    marginLeft: '1em',
-    marginBottom: '1em'
-  }
-}
+export default Li

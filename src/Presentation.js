@@ -1,10 +1,17 @@
 import React, { Component } from 'react'
-import Radium from 'radium'
-import { STYLES } from './constants'
+import classNames from 'classnames'
 import Scale from './Scale'
 import SlideIndex from './SlideIndex'
+import base from './styles/base'
 
 class Presentation extends Component {
+  getChildContext () {
+    const { style } = this.props
+    return {
+      styleName: style ? style.props.name : null
+    }
+  }
+
   componentDidMount () {
     if (!this.$slides) return
     this.scrollToSlide()
@@ -22,15 +29,14 @@ class Presentation extends Component {
   }
 
   render () {
-    const { children } = this.props
-    const { style, slideIndex } = this.context
+    const { children, style } = this.props
+    const { slideIndex } = this.context
     return (
       <div
-        className='ironpt__presentation'
-        style={[
-          styles.base,
-          styles[style]
-        ]}
+        className={classNames(
+          'ironpt__presentation',
+          style ? style.props.name : null
+        )}
       >
         <Scale
           width={960}
@@ -40,48 +46,28 @@ class Presentation extends Component {
         >
           <div
             className='ironpt__slides'
-            style={slidesStyle}
             ref={(c) => { this.$slides = c }}
           >
             { children }
           </div>
           <SlideIndex
             slideIndex={slideIndex}
-            slideLength={children.length}
+            slideLength={[].concat(children).length}
           />
         </Scale>
+        { base }
+        { style }
       </div>
     )
   }
 }
 
+Presentation.childContextTypes = {
+  styleName: React.PropTypes.string
+}
+
 Presentation.contextTypes = {
-  style: React.PropTypes.string.isRequired,
   slideIndex: React.PropTypes.number.isRequired
 }
 
-export default Radium(Presentation)
-
-const styles = {
-  base: {
-    position: 'relative',
-    width: '100%',
-    height: '100%'
-  },
-  [STYLES.SIMPLE]: {
-    fontFamily: 'helvetica',
-    background: '#fff',
-    color: 'black'
-  },
-  [STYLES.DEVELOPER]: {
-    fontFamily: 'monospace',
-    background: '#222',
-    color: 'white'
-  }
-}
-
-const slidesStyle = {
-  width: '100%',
-  height: '100%',
-  overflow: 'hidden'
-}
+export default Presentation

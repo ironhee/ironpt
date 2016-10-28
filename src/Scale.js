@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Radium from 'radium'
 
 class Scale extends Component {
   constructor (props) {
@@ -31,7 +30,6 @@ class Scale extends Component {
     return (
       <div
         className='ironpt__scale'
-        style={style}
         ref={(c) => { this.$scale = c }}
       >
         <div
@@ -53,13 +51,7 @@ Scale.propTypes = {
   maxScale: React.PropTypes.number
 }
 
-export default Radium(Scale)
-
-const style = {
-  position: 'relative',
-  width: '100%',
-  height: '100%'
-}
+export default Scale
 
 const getContentStyle = ({ scale, width, height }) => ({
   position: 'absolute',
