@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Radium from 'radium'
 import fp from 'lodash/fp'
 import assert from 'assert'
+import Hammer from 'hammerjs'
 import { STYLES } from './constants'
 
 class Controller extends Component {
@@ -22,8 +23,7 @@ class Controller extends Component {
   getChildContext () {
     return {
       style: this.state.style,
-      slideIndex: this.state.slideIndex,
-      slideLength: this.state.slideLength
+      slideIndex: this.state.slideIndex
     }
   }
 
@@ -31,13 +31,26 @@ class Controller extends Component {
     if (!this.$controller) return
     const presentationChildren = this
       .$controller
-      .getElementsByClassName('ironhee-pt__presentation')[0]
+      .querySelector('.ironhee-pt__presentation > .ironhee-pt__slides')
       .children
     const slides = fp.filter(el => el.className === 'ironhee-pt__slide')(presentationChildren)
+    this.setState({ slideLength: slides.length })
 
-    this.setState({
-      slideLength: slides.length
-    })
+    // Touch support
+    this.hammer = new Hammer(this.$controller, {})
+    this.hammer.get('swipe').set({ direction: Hammer.DIRECTION_ALL })
+    this.hammer.on('swipeleft', this.onNextSlide)
+    this.hammer.on('swiperight', this.onPrevSlide)
+    this.hammer.on('swipeup', this.onRandomStyle)
+    this.hammer.on('swipedown', this.onRandomStyle)
+  }
+
+  componentWillUnmount () {
+    if (!this.$controller) return
+    this.hammer.off('swipeleft', this.onNextSlide)
+    this.hammer.off('swiperight', this.onPrevSlide)
+    this.hammer.off('swipeup', this.onRandomStyle)
+    this.hammer.off('swipedown', this.onRandomStyle)
   }
 
   selectSlide (slideIndex) {
@@ -60,8 +73,6 @@ class Controller extends Component {
         this.onNextSlide()
         break
       case 'ArrowUp':
-        this.onRandomStyle()
-        break
       case 'ArrowDown':
         this.onRandomStyle()
         break
@@ -93,10 +104,6 @@ class Controller extends Component {
 
   render () {
     const { children } = this.props
-    const { slideIndex, slideLength } = this.state
-    const hasPrevSlide = slideIndex - 1 >= 0
-    const hasNextSlide = slideIndex + 1 < slideLength
-
     return (
       <div
         className='ironhee-pt__controller'
@@ -112,30 +119,6 @@ class Controller extends Component {
           ref={(c) => { this.$input = c }}
           style={hiddenInputStyle}
         />
-
-        <div
-          style={[
-            buttonStyles.base,
-            prevButtonStyles.base,
-            ...hasPrevSlide ? [] : [buttonStyles.disabled]
-          ]}
-          key='prev'
-          onClick={this.onPrevSlide}
-        >
-          prev
-        </div>
-
-        <div
-          style={[
-            buttonStyles.base,
-            nextButtonStyles.base,
-            ...hasNextSlide ? [] : [buttonStyles.disabled]
-          ]}
-          key='next'
-          onClick={this.onNextSlide}
-        >
-          next
-        </div>
       </div>
     )
   }
@@ -148,8 +131,7 @@ Controller.propTypes = {
 
 Controller.childContextTypes = {
   style: React.PropTypes.string.isRequired,
-  slideIndex: React.PropTypes.number.isRequired,
-  slideLength: React.PropTypes.number.isRequired
+  slideIndex: React.PropTypes.number.isRequired
 }
 
 export default Radium(Controller)
@@ -170,40 +152,4 @@ const hiddenInputStyle = {
   margin: 0,
   padding: 0,
   boxShadow: 'none'
-}
-
-const buttonStyles = {
-  base: {
-    position: 'absolute',
-    top: 0,
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    height: '100%',
-    padding: '0 10px',
-    color: '#fff',
-    backgroundColor: '#555',
-    fontSize: '2em',
-    opacity: '0',
-    ':hover': {
-      opacity: '0.5'
-    }
-  },
-  disabled: {
-    ':hover': {
-      opacity: '0'
-    }
-  }
-}
-
-const prevButtonStyles = {
-  base: {
-    left: 0
-  }
-}
-
-const nextButtonStyles = {
-  base: {
-    right: 0
-  }
 }

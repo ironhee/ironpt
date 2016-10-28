@@ -1,6 +1,6 @@
 {
   "name": "ironpt",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Presentation library created by React.",
   "main": "lib",
   "author": "ironhee",
@@ -20,6 +20,7 @@
     "standard": "^8.5.0"
   },
   "dependencies": {
+    "hammerjs": "^2.0.8",
     "lodash": "^4.16.4",
     "radium": "^0.18.1",
     "react": "^15.3.2",

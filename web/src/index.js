@@ -61,8 +61,6 @@ const constroller = (
     </Slide>
     <Slide>
       <div style={{
-        boxSizing: 'border-box',
-        padding: '40px',
         width: '100%',
         height: '100%'
       }}>
@@ -183,6 +181,7 @@ const App = () => (
   <div
     className='App'
     style={{
+      display: 'border-box',
       width: window ? window.innerWidth : 0,
       height: window ? window.innerHeight : 0
     }}

@@ -33,8 +33,11 @@ const codeStyles = {
 const styles = {
   base: {},
   [STYLES.SIMPLE]: {
+    margin: '10px 20px',
     fontFamily: 'monospace',
     fontSize: '24px'
   },
-  [STYLES.DEVELOPER]: {}
+  [STYLES.DEVELOPER]: {
+    margin: '10px 20px'
+  }
 }

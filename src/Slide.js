@@ -2,22 +2,17 @@ import React from 'react'
 import Radium from 'radium'
 import { STYLES } from './constants'
 
-const Slide = ({ children, isActive }, { style }) => (
+const Slide = ({ children }, { style }) => (
   <div
     className='ironhee-pt__slide'
     style={[
       styles.base,
-      styles[style],
-      ...isActive ? [] : [styles.inactive]
+      styles[style]
     ]}
   >
     { children }
   </div>
 )
-
-Slide.propTypes = {
-  isActive: React.PropTypes.bool
-}
 
 Slide.contextTypes = {
   style: React.PropTypes.string.isRequired
@@ -32,16 +27,9 @@ const styles = {
     height: '100%'
   },
   [STYLES.SIMPLE]: {
-    background: '#fff',
-    padding: '40px'
+    padding: '2em'
   },
   [STYLES.DEVELOPER]: {
-    background: '#222',
-    color: '#fff',
-    padding: '40px'
-  },
-  // status
-  inactive: {
-    display: 'none'
+    padding: '2em'
   }
 }
