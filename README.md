@@ -35,7 +35,7 @@ import {
   Li,
   Code,
   P,
-  STYLES
+  developer
 } from 'ironpt'
 
 const App = () => (
@@ -46,10 +46,8 @@ const App = () => (
       height: window ? window.innerHeight : 0
     }}
   >
-    <Controller
-      defaultStyle={STYLES.SIMPLE}
-    >
-      <Presentation>
+    <Controller>
+      <Presentation style={developer}>
         <Slide>
           <H1>H1 Result</H1>
           <H2>H2 Result</H2>

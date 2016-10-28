@@ -5,6 +5,10 @@
   "main": "lib",
   "author": "ironhee",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ironhee/ironpt.git"
+  },
   "devDependencies": {
     "babel-cli": "^6.18.0",
     "babel-eslint": "^7.0.0",
