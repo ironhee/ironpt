@@ -16,7 +16,7 @@ const Code = ({ children, language }, { styleName }) => (
 )
 
 Code.contextTypes = {
-  styleName: React.PropTypes.string.isRequired
+  styleName: React.PropTypes.string
 }
 
 export default Radium(Code)
