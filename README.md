@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/ironhee/Ayun.svg?branch=master)](https://travis-ci.org/ironhee/Ayun)
 
-# Ironpt
+# Ayun
 
 Create presentation with react component.
 
