@@ -26,14 +26,14 @@ const TutorialPresentation = () => (
 
     {/* Controller & Presentation */}
     <Slide>
-      <H1>Move</H1>
+      <H1>Move slides</H1>
       <P>Stroke ← & → key to move slide</P>
       <P>Or swipe ← & → direction</P>
     </Slide>
 
     {/* Style */}
     <Slide>
-      <H1>Move</H1>
+      <H1>Change styles</H1>
       <P>Stroke ↑ & ↓ to change style</P>
       <P>Or swipe ↑ & ↓ direction</P>
     </Slide>
