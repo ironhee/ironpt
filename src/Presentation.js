@@ -1,21 +1,17 @@
 import React, { Component } from 'react'
 import Radium from 'radium'
 import { STYLES } from './constants'
+import Scale from './Scale'
+import SlideIndex from './SlideIndex'
 
 class Presentation extends Component {
-  constructor (props) {
-    super(props)
-    this.state = { scale: '1' }
-  }
-
   componentDidMount () {
-    if (!this.$presentation) return
-    const scale = this.getSlidesScale()
-    this.setState({ scale })
+    if (!this.$slides) return
     this.scrollToSlide()
   }
 
   componentDidUpdate () {
+    if (!this.$slides) return
     this.scrollToSlide()
   }
 
@@ -25,22 +21,7 @@ class Presentation extends Component {
     this.$slides.scrollTop = 700 * slideIndex
   }
 
-  getSlidesScale () {
-    if (!this.$presentation || !this.$slides) return 1
-
-    const minScale = 0.2
-    const maxScale = 1.5
-    let scale = Math.min(
-      this.$presentation.offsetWidth / this.$slides.offsetWidth,
-      this.$presentation.offsetHeight / this.$slides.offsetHeight
-    )
-    scale = Math.max(scale, minScale)
-    scale = Math.min(scale, maxScale)
-    return scale || 1
-  }
-
   render () {
-    const { scale } = this.state
     const { children } = this.props
     const { style, slideIndex } = this.context
     return (
@@ -50,27 +31,25 @@ class Presentation extends Component {
           styles.base,
           styles[style]
         ]}
-        ref={(c) => { this.$presentation = c }}
       >
-        <div
-          className='ironhee-pt__slides'
-          style={getSlidesStyle(scale)}
-          ref={(c) => { this.$slides = c }}
+        <Scale
+          width={960}
+          height={700}
+          minScale={0.2}
+          maxScale={1.5}
         >
-          { children }
-        </div>
-        <div
-          style={[
-            indexStyle.base,
-            indexStyle[style]
-          ]}
-        >
-          <span
-            style={getIndexTextStyle(scale)}
+          <div
+            className='ironhee-pt__slides'
+            style={slidesStyle}
+            ref={(c) => { this.$slides = c }}
           >
-            { slideIndex + 1 } / { children.length }
-          </span>
-        </div>
+            { children }
+          </div>
+          <SlideIndex
+            slideIndex={slideIndex}
+            slideLength={children.length}
+          />
+        </Scale>
       </div>
     )
   }
@@ -101,36 +80,8 @@ const styles = {
   }
 }
 
-const getSlidesStyle = (scale) => ({
-  position: 'absolute',
-  width: '960px',
-  height: '700px',
-  overflow: 'hidden',
-  left: '50%',
-  top: '50%',
-  bottom: 'auto',
-  right: 'auto',
-  transform: `translate(-50%, -50%) scale(${scale})`
-})
-
-const indexStyle = {
-  [STYLES.SIMPLE]: {
-    bottom: 0,
-    width: '100%',
-    textAlign: 'center',
-    position: 'absolute',
-    fontSize: '1.5em'
-  },
-  [STYLES.DEVELOPER]: {
-    bottom: 0,
-    width: '100%',
-    textAlign: 'right',
-    position: 'absolute',
-    fontSize: '1.5em'
-  }
+const slidesStyle = {
+  width: '100%',
+  height: '100%',
+  overflow: 'hidden'
 }
-
-const getIndexTextStyle = (scale) => ({
-  display: 'inline-block',
-  transform: `scale(${scale})`
-})

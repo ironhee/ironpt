@@ -31,7 +31,7 @@ class Controller extends Component {
     if (!this.$controller) return
     const presentationChildren = this
       .$controller
-      .querySelector('.ironhee-pt__presentation > .ironhee-pt__slides')
+      .querySelector('.ironhee-pt__presentation .ironhee-pt__slides')
       .children
     const slides = fp.filter(el => el.className === 'ironhee-pt__slide')(presentationChildren)
     this.setState({ slideLength: slides.length })
