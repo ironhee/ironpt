@@ -1,4 +1,1 @@
-# Summary
-
-* [README](ape)
-
+docs/README.md
