@@ -1,4 +1,3 @@
 # Summary
 
-* Read me
 
