@@ -9,5 +9,5 @@ export Presentation from './Presentation'
 export Slide from './Slide'
 export Ul from './Ul'
 
-export simple from './styles/simple'
-export developer from './styles/developer'
+export simple from './themes/simple'
+export developer from './themes/developer'

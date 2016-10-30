@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import fp from 'lodash/fp'
 import assert from 'assert'
 import Hammer from 'hammerjs'
-import controllerStyle from './styles/controller'
 
 class Controller extends Component {
   constructor (props) {
@@ -84,7 +83,13 @@ class Controller extends Component {
   }
 
   render () {
-    const { children, ...props } = this.props
+    const {
+      children,
+      // eslint-disable-next-line
+      defaultSlideIndex,
+      ...props
+    } = this.props
+
     return (
       <div
         className='ironpt__controller'
@@ -98,8 +103,16 @@ class Controller extends Component {
           className='ironpt__input-for-keydown'
           type='text'
           ref={(c) => { this.$input = c }}
+          style={{
+            width: 0,
+            height: 0,
+            outline: 'none',
+            border: 'none',
+            margin: 0,
+            padding: 0,
+            boxShadow: 'none'
+          }}
         />
-        { controllerStyle }
       </div>
     )
   }

@@ -1,8 +1,8 @@
-# Styles
+# Theme
 
-ironpt has some style of presentation.
+ironpt has some theme of presentation.
 
-You can easily activate style by passing them to Presentation.
+You can easily activate theme by passing them to Presentation.
 
 #### Types
 
@@ -12,7 +12,7 @@ You can easily activate style by passing them to Presentation.
 #### Example: `simple`
 
 ```js
-<Presentation style={simple}>
+<Presentation theme={simple}>
   <Slide>
     <H1>Hello world</H1>
     <P>Bla Bla Bla</P>

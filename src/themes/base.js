@@ -9,8 +9,6 @@ const base = (
     rules={{
       ...normalize,
       position: 'relative',
-      width: '100%',
-      height: '100%',
 
       '.ironpt__scale': {
         position: 'relative',

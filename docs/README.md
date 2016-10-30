@@ -1,6 +1,7 @@
 # Table of Contents
 
 * [Read Me](/README.md)
+* [Tutorial](/docs/tutorial.md)
 * Examples
   * [Full screen](/docs/examples/full-screen.md)
 * API Reference

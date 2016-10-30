@@ -17,7 +17,7 @@ Manage `slideIndex` and pass it as [`context`](https://facebook.github.io/react/
 <Controller
   defaultSlideIndex={1}
 >
-  <Presentation style={simple}>
+  <Presentation theme={simple}>
     <Slide>
       <H1>Hello world</H1>
     </Slide>

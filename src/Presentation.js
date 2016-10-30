@@ -2,13 +2,13 @@ import React, { Component } from 'react'
 import classNames from 'classnames'
 import Scale from './Scale'
 import SlideIndex from './SlideIndex'
-import base from './styles/base'
+import base from './themes/base'
 
 class Presentation extends Component {
   getChildContext () {
-    const { style } = this.props
+    const { theme } = this.props
     return {
-      styleName: style ? style.props.name : null
+      themeName: theme ? theme.props.name : null
     }
   }
 
@@ -29,13 +29,14 @@ class Presentation extends Component {
   }
 
   render () {
-    const { children, style, ...props } = this.props
+    const { children, theme, ...props } = this.props
+
     const { slideIndex } = this.context
     return (
       <div
         className={classNames(
           'ironpt__presentation',
-          style ? style.props.name : null
+          theme ? theme.props.name : null
         )}
         {...props}
       >
@@ -57,14 +58,14 @@ class Presentation extends Component {
           />
         </Scale>
         { base }
-        { style }
+        { theme }
       </div>
     )
   }
 }
 
 Presentation.childContextTypes = {
-  styleName: React.PropTypes.string
+  themeName: React.PropTypes.string
 }
 
 Presentation.contextTypes = {

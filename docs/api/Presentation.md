@@ -4,7 +4,7 @@ Presentation component. It receive [`<Slide>`](/docs/api/Slide) as `props.childr
 
 #### Props
 
-- `style` *([Style](/docs/api/styles.md))*: style of the presentation.
+- `theme` *([Theme](/docs/api/theme.md))*: theme of the presentation.
 
 #### Context
 
@@ -16,7 +16,7 @@ Presentation component. It receive [`<Slide>`](/docs/api/Slide) as `props.childr
 #### Example
 
 ```js
-<Presentation style={simple}>
+<Presentation theme={simple}>
   <Slide>{/* Some contents... */}</Slide>
   <Slide>{/* Some contents... */}</Slide>
 </Presentation>
