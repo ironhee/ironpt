@@ -1,40 +1,23 @@
 # `<Presentation>`
 
-Presentation component.
+Presentation component. It receive [`<Slide>`](/docs/api/Slide) as `props.children`.
 
 #### Props
 
-- `style` - Style: style of the presentation.
-  - `simple`
-  - `developer`
+- `style` *([Style](/docs/api/styles.md))*: style of the presentation.
+
+#### Context
+
+- `slideIndex` *(Number)*: Index of slides.
 
 #### ChildContext
-- `styleName` - String: Name of the style.
+- `styleName` *(String)*: Name of the [style](/docs/api/styles.md).
 
 #### Example
 
 ```js
-import React from 'react'
-import ReactDOM from 'react-dom'
-import {
-  Presentation,
-  Slide,
-  H1,
-  P,
-  simple
-}
-
-const App = () => (
-  <Presentation style={simple}>
-    <Slide>
-      <H1>Hello world</H1>
-      <P>Bla Bla Bla</P>
-    </Slide>
-  </Presentation>
-)
-
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-)
+<Presentation style={simple}>
+  <Slide>{/* Some contents... */}</Slide>
+  <Slide>{/* Some contents... */}</Slide>
+</Presentation>
 ```

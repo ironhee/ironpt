@@ -2,7 +2,7 @@
 
 * [Read Me](/README.md)
 * Examples
-  * [Full screen](/docs/api/full-screen.md)
+  * [Full screen](/docs/examples/full-screen.md)
 * API Reference
   * [Controller](/docs/api/Controller.md)
   * [Presentation](/docs/api/Presentation.md)

@@ -1,32 +1,21 @@
 # Styles
 
+ironpt has some style of presentation.
+
+You can easily activate style by passing them to Presentation.
+
+#### Types
+
 - `simple`
 - `developer`
 
 #### Example: `simple`
 
 ```js
-import React from 'react'
-import ReactDOM from 'react-dom'
-import {
-  Presentation,
-  Slide,
-  H1,
-  P,
-  simple
-}
-
-const App = () => (
-  <Presentation style={simple}>
-    <Slide>
-      <H1>Hello world</H1>
-      <P>Bla Bla Bla</P>
-    </Slide>
-  </Presentation>
-)
-
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-)
+<Presentation style={simple}>
+  <Slide>
+    <H1>Hello world</H1>
+    <P>Bla Bla Bla</P>
+  </Slide>
+</Presentation>
 ```

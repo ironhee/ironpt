@@ -1,14 +1,6 @@
-# `<Slide>`
+# Elements
 
-Slide of presentation component.
-
-#### Example
-
-```js
-<Slide>
-  {/* Slide content here */}
-</Slide>
-```
+ironpt has some predefined elements. It help you to create presentation quickly. Predefined element's styles are changed by [`styles`](/docs/api/styles) passed to [`<Presentation>`](/docs/api/Presentation).
 
 # `<H1>`, `<H2>`
 
@@ -17,10 +9,11 @@ Header component.
 #### Example
 
 ```js
-<Slide>
-  <H1>Main header</H1>
-  <H2>Sub Header</H2>
-</Slide>
+<H1>Main header</H1>
+```
+
+```js
+<H2>Sub header</H2>
 ```
 
 # `<P>`
@@ -30,9 +23,7 @@ Paragraph component.
 #### Example
 
 ```js
-<Slide>
-  <P>Paragraph</P>
-</Slide>
+<P>Paragraph</P>
 ```
 
 # `<Ul>`, `<Li>`
@@ -42,48 +33,41 @@ List component.
 #### Example
 
 ```js
-<Slide>
-  <Ul>
-    <Li>List Item 1</Li>
-    <Li>List Item 2</Li>
-  </Ul>
-</Slide>
+<Ul>
+  <Li>List Item 1</Li>
+  <Li>List Item 2</Li>
+</Ul>
 ```
 
 # `<Cover>`
 
-Cover Style component.
+Cover style component.
 
 #### Example
 
 ```js
-<Slide>
-  <Cover>
-    <H1>Title of presentation</H1>
-    <H2>Sub title</H2>
-  </Cover>
-</Slide>
+<Cover>
+  <H1>Title of presentation</H1>
+  <H2>Sub title</H2>
+</Cover>
 ```
 
 # `<Code>`
 
 Code component. Support syntax highlight
 
-
 #### Props
 
-- `language` - String: Language of the code
+- `language` *(String)*: Language of the code
 
 #### Example
 
 ```js
-<Slide>
-  <Code language='javascript'>
-    {`
+<Code language='javascript'>
+  {`
 const a = 1
 const b = 2
 console.log(a + b)
-    `.trim()}
-  </Code>
-</Slide>
+  `.trim()}
+</Code>
 ```
