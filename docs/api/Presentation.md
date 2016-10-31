@@ -1,6 +1,6 @@
 # `<Presentation>`
 
-Presentation component. It receive [`<Slide>`](/docs/api/Slide) as `props.children`.
+Presentation component. It receive [`<Slide>`](/docs/api/Slide.md) as `props.children`.
 
 #### Props
 
