@@ -41,7 +41,7 @@ List component.
 
 # `<Cover>`
 
-Cover style component.
+Cover component.
 
 #### Example
 

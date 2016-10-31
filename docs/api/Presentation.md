@@ -11,7 +11,7 @@ Presentation component. It receive [`<Slide>`](/docs/api/Slide) as `props.childr
 - `slideIndex` *(Number)*: Index of slides.
 
 #### ChildContext
-- `styleName` *(String)*: Name of the [style](/docs/api/styles.md).
+- `themeName` *(String)*: Name of the [Theme](/docs/api/Theme.md).
 
 #### Example
 
