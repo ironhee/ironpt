@@ -16,7 +16,9 @@ __Just put in your existing component!__
 npm install -save ironpt
 ```
 
-# API
+# Documentation
+
+[https://ironhee.gitbooks.io/ironpt/content/](https://ironhee.gitbooks.io/ironpt/content/)
 
 # Demo & Tutorial
 
