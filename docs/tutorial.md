@@ -33,14 +33,16 @@
   } from 'ironpt'
   import './index.css'
 
+  const presentationStyle = {
+    width: 600,
+    height: 600
+  }
+
   ReactDOM.render(
     <Controller>
       <Presentation
         theme={simple}
-        style={{
-          width: 600,
-          height: 600
-        }}
+        style={presentationStyle}
       >
         <Slide>
           <Cover>
