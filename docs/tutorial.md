@@ -1,6 +1,6 @@
 # Tutorial
 
-1. *(Optional)* Create react project with [create-react-app](https://github.com/facebookincubator/create-react-app)
+1. Create react project with [create-react-app](https://github.com/facebookincubator/create-react-app)
 
   ```bash
   npm install -g create-react-app
@@ -107,11 +107,11 @@
   npm install gh-pages --save-dev
   ```
 
-1. Add your [Github Pages](https://pages.github.com/) URL in your `package.json`
+1. Add your [Github Pages](https://pages.github.com/) URL in your *package.json*
 
   ```json
   {
-    "homepage": "http://ironhee.github.io/ironpt/",
+    "homepage": "http://ironhee.github.io/ironpt/"
   }
   ```
 
