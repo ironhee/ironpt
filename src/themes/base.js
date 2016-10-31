@@ -1,14 +1,13 @@
 import React from 'react'
 import { Style } from 'radium'
-import normalize from 'radium-normalize'
 
 const base = (
   <Style
     name='base'
     scopeSelector='.ironpt__presentation'
     rules={{
-      ...normalize,
       position: 'relative',
+      overflow: 'hidden',
 
       '.ironpt__scale': {
         position: 'relative',
