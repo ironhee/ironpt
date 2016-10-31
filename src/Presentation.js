@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import classNames from 'classnames'
+import { CLASS_NAMES } from './constants'
 import Scale from './Scale'
 import SlideIndex from './SlideIndex'
 import base from './themes/base'
@@ -35,7 +36,7 @@ class Presentation extends Component {
     return (
       <div
         className={classNames(
-          'ironpt__presentation',
+          CLASS_NAMES.PRESENTATION,
           theme ? theme.props.name : null
         )}
         {...props}
@@ -47,7 +48,7 @@ class Presentation extends Component {
           maxScale={1.5}
         >
           <div
-            className='ironpt__slides'
+            className={CLASS_NAMES.SLIDES}
             ref={(c) => { this.$slides = c }}
           >
             { children }

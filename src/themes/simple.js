@@ -1,20 +1,21 @@
 import React from 'react'
 import { Style } from 'radium'
+import { QUERY_SELECTORS } from '../constants'
 
 const simple = (
   <Style
     name='simple'
-    scopeSelector='.ironpt__presentation.simple'
+    scopeSelector={QUERY_SELECTORS.PRESENTATION + '.simple'}
     rules={{
       fontFamily: 'helvetica',
       background: '#fff',
       color: 'black',
 
-      '.ironpt__slide': {
+      [QUERY_SELECTORS.SLIDE]: {
         padding: '2em'
       },
 
-      '.ironpt__slide-index': {
+      [QUERY_SELECTORS.SLIDE_INDEX]: {
         position: 'absolute',
         bottom: 0,
         width: '100%',
@@ -22,36 +23,35 @@ const simple = (
         fontSize: '1.5em'
       },
 
-      '.ironpt__cover': {
+      [QUERY_SELECTORS.COVER]: {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center'
       },
 
-      '.ironpt__h1': {
+      [QUERY_SELECTORS.H1]: {
         margin: '0 20px 30px 20px',
         fontSize: '4em',
         borderBottom: '1px solid #555'
       },
 
-      '.ironpt__h2': {
+      [QUERY_SELECTORS.H2]: {
         margin: '0 20px 20px 20px',
         fontSize: '2.5em',
         color: '#555'
       },
 
-      '.ironpt__p': {
+      [QUERY_SELECTORS.P]: {
         margin: '10px 20px',
         fontSize: '2em'
       },
 
-      '.ironpt__li': {
-        fontSize: '2em',
-        marginLeft: '1em',
-        marginBottom: '1em'
+      [QUERY_SELECTORS.LI]: {
+        margin: '10px 20px',
+        fontSize: '2em'
       },
 
-      '.ironpt__code': {
+      [QUERY_SELECTORS.CODE]: {
         margin: '10px 20px'
       }
     }}

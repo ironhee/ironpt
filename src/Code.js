@@ -2,10 +2,11 @@ import React from 'react'
 import Radium from 'radium'
 import SyntaxHighlighter from 'react-syntax-highlighter'
 import { xcode, xt256 } from 'react-syntax-highlighter/dist/styles'
+import { CLASS_NAMES } from './constants'
 
 const Code = ({ children, language, ...props }, { themeName }) => (
   <div
-    className='ironpt__code'
+    className={CLASS_NAMES.CODE}
     {...props}
   >
     <SyntaxHighlighter

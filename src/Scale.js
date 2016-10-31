@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { CLASS_NAMES } from './constants'
 
 class Scale extends Component {
   constructor (props) {
@@ -29,11 +30,11 @@ class Scale extends Component {
     const { children, width, height } = this.props
     return (
       <div
-        className='ironpt__scale'
+        className={CLASS_NAMES.SCALE}
         ref={(c) => { this.$scale = c }}
       >
         <div
-          className='ironpt__scale__content'
+          className={CLASS_NAMES.SCALE_CONTENT}
           style={getContentStyle({ scale, width, height })}
           ref={(c) => { this.$scaleContent = c }}
         >

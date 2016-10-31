@@ -1,49 +1,50 @@
 import React from 'react'
 import { Style } from 'radium'
+import { QUERY_SELECTORS } from '../constants'
 
 const base = (
   <Style
     name='base'
-    scopeSelector='.ironpt__presentation'
+    scopeSelector={QUERY_SELECTORS.PRESENTATION}
     rules={{
       position: 'relative',
       overflow: 'hidden',
 
-      '.ironpt__scale': {
+      [QUERY_SELECTORS.SCALE]: {
         position: 'relative',
         width: '100%',
         height: '100%'
       },
 
-      '.ironpt__slides': {
+      [QUERY_SELECTORS.SLIDES]: {
         width: '100%',
         height: '100%',
         overflow: 'hidden'
       },
 
-      '.ironpt__slide': {
+      [QUERY_SELECTORS.SLIDE]: {
         boxSizing: 'border-box',
         width: '100%',
         height: '100%'
       },
 
-      '.ironpt__cover': {
+      [QUERY_SELECTORS.COVER]: {
         boxSizing: 'border-box',
         width: '100%',
         height: '100%'
       },
 
-      '.ironpt__h1': {
+      [QUERY_SELECTORS.H1]: {
         margin: 0,
         padding: 0
       },
 
-      '.ironpt__h2': {
+      [QUERY_SELECTORS.H2]: {
         margin: 0,
         padding: 0
       },
 
-      '.ironpt__p': {
+      [QUERY_SELECTORS.P]: {
         margin: 0,
         padding: 0
       }

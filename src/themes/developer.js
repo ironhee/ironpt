@@ -1,20 +1,21 @@
 import React from 'react'
 import { Style } from 'radium'
+import { QUERY_SELECTORS } from '../constants'
 
 const developer = (
   <Style
     name='developer'
-    scopeSelector='.ironpt__presentation.developer'
+    scopeSelector={QUERY_SELECTORS.PRESENTATION + '.developer'}
     rules={{
       fontFamily: 'monospace',
       background: '#222',
       color: 'white',
 
-      '.ironpt__slide': {
+      [QUERY_SELECTORS.SLIDE]: {
         padding: '2em'
       },
 
-      '.ironpt__slide-index': {
+      [QUERY_SELECTORS.SLIDE_INDEX]: {
         position: 'absolute',
         bottom: 0,
         width: '100%',
@@ -22,32 +23,32 @@ const developer = (
         fontSize: '1.5em'
       },
 
-      '.ironpt__cover': {},
+      [QUERY_SELECTORS.COVER]: {},
 
-      '.ironpt__h1': {
+      [QUERY_SELECTORS.H1]: {
         margin: '0 20px 30px 20px',
         fontSize: '4em',
         color: '#f44'
       },
 
-      '.ironpt__h2': {
+      [QUERY_SELECTORS.H2]: {
         margin: '0 20px 30px 20px',
         fontSize: '2em',
         color: '#fdd'
       },
 
-      '.ironpt__p': {
+      [QUERY_SELECTORS.P]: {
         margin: '10px 20px',
         fontSize: '2em'
       },
 
-      '.ironpt__li': {
+      [QUERY_SELECTORS.LI]: {
         fontSize: '2em',
         marginLeft: '1em',
         marginBottom: '1em'
       },
 
-      '.ironpt__code': {
+      [QUERY_SELECTORS.CODE]: {
         margin: '10px 20px'
       }
     }}

@@ -43,15 +43,15 @@ const App = () => (
         <H1>Controller & Presentation</H1>
         <Code language='jsx'>
           {`
-  const constroller = (
-    <Controller>
-      <Presentation theme={simple}>
-        <Slide>
-          <H1>Hello world</H1>
-        </Slide>
-      </Presentation>
-    </Controller>
-  )
+const constroller = (
+  <Controller>
+    <Presentation theme={simple}>
+      <Slide>
+        <H1>Hello world</H1>
+      </Slide>
+    </Presentation>
+  </Controller>
+)
           `.trim()}
         </Code>
       </Slide>
@@ -81,11 +81,11 @@ const App = () => (
         <H1>Slide</H1>
         <Code language='jsx'>
           {`
-  const slide = (
-    <Slide>
-      <H1>Slide Result</H1>
-    </Slide>
-  )
+const slide = (
+  <Slide>
+    <H1>Slide Result</H1>
+  </Slide>
+)
           `.trim()}
         </Code>
       </Slide>
@@ -98,21 +98,21 @@ const App = () => (
         <H1>Elements</H1>
         <Code language='jsx'>
           {`
-  const slide = (
-    <Slide>
-      <H1>H1 Result</H1>
-      <H2>H2 Result</H2>
-      <P>P Result1</P>
-      <P>P Result2</P>
-      <Ul>
-        <Li>Li Result1</Li>
-        <Li>Li Result2</Li>
-      </Ul>
-      <Code language='js'>
-        const foo = 'bar'
-      </Code>
-    </Slide>
-  )
+const slide = (
+  <Slide>
+    <H1>H1 Result</H1>
+    <H2>H2 Result</H2>
+    <P>P Result1</P>
+    <P>P Result2</P>
+    <Ul>
+      <Li>Li Result1</Li>
+      <Li>Li Result2</Li>
+    </Ul>
+    <Code language='js'>
+      const foo = 'bar'
+    </Code>
+  </Slide>
+)
           `.trim()}
         </Code>
       </Slide>
@@ -135,14 +135,14 @@ const App = () => (
         <H1>Cover</H1>
         <Code language='jsx'>
           {`
-  const slide = (
-    <Slide>
-      <Cover>
-        <H1>H1 Result</H1>
-        <H2>H2 Result</H2>
-      </Cover>
-    </Slide>
-  )
+const slide = (
+  <Slide>
+    <Cover>
+      <H1>H1 Result</H1>
+      <H2>H2 Result</H2>
+    </Cover>
+  </Slide>
+)
           `.trim()}
         </Code>
       </Slide>

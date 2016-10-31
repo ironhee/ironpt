@@ -1,9 +1,10 @@
 import React from 'react'
+import { CLASS_NAMES } from './constants'
 
-const Cover = ({ children, ...props }) => (
-  <ul className='ironpt__ul' {...props}>
+const Ul = ({ children, ...props }) => (
+  <ul className={CLASS_NAMES.UL} {...props}>
     { children }
   </ul>
 )
 
-export default Cover
+export default Ul
