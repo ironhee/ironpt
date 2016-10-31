@@ -4,7 +4,7 @@ Presentation component. It receive [`<Slide>`](/docs/api/Slide.md) as `props.chi
 
 #### Props
 
-- `theme` *([Theme](/docs/api/theme.md))*: theme of the presentation.
+- `theme` *([Theme](/docs/api/Theme.md))*: theme of the presentation.
 
 #### Context
 
