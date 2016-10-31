@@ -1,15 +1,15 @@
 # `<Controller>`
 
-Controller of [`<Presentation>`](/docs/api/Presentation.md).
-Manage `slideIndex` and pass it as [`context`](https://facebook.github.io/react/docs/context.html)
+Controller of [<Presentation>](/docs/api/Presentation.md).
+Manage `slideIndex` and pass it as [context](https://facebook.github.io/react/docs/context.html)
 
 #### Props
 
-- `defaultSlideIndex` *(Number)*: Initial Slide index of [`<Presentation>`](/docs/api/Presentation.md).
+- `defaultSlideIndex` *(Number)*: Initial Slide index of [<Presentation>](/docs/api/Presentation.md).
 
 #### ChildContext
 
-- `slideIndex` *(Number)*: Slide index of [`<Presentation>`](/docs/api/Presentation.md).
+- `slideIndex` *(Number)*: Slide index of [<Presentation>](/docs/api/Presentation.md).
 
 #### Example
 

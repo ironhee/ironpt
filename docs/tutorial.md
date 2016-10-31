@@ -103,7 +103,7 @@
   npm run build
   ```
 
-1. Install [`gh-pages`](https://github.com/tschaub/gh-pages)
+1. Install [gh-pages](https://github.com/tschaub/gh-pages)
 
   ```bash
   npm install gh-pages --save-dev

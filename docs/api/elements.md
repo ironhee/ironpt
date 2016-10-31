@@ -1,6 +1,6 @@
 # Elements
 
-ironpt has some predefined elements. It help you to create presentation quickly. Predefined element's styles are changed by [`Theme`](/docs/api/Theme.md) passed to [`<Presentation>`](/docs/api/Presentation.md).
+ironpt has some predefined elements. It help you to create presentation quickly. Predefined element's styles are changed by [Theme](/docs/api/Theme.md) passed to [<Presentation>](/docs/api/Presentation.md).
 
 # `<H1>`, `<H2>`
 
