@@ -16,9 +16,6 @@ import {
 } from 'ironpt'
 import './index.css'
 
-console.log(Center);
-console.log(H1);
-
 const App = () => (
   <Controller defaultSlideIndex={2}>
     <Presentation
