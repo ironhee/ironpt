@@ -53,6 +53,11 @@ const simple = (
 
       [QUERY_SELECTORS.CODE]: {
         margin: '10px 20px'
+      },
+      [QUERY_SELECTORS.CENTER]: {
+        textAlign: "center",
+        margin: 0,
+        padding: 0
       }
     }}
   />
