@@ -8,6 +8,7 @@ export const CLASS_NAMES = {
   SLIDE: 'ironpt__slide',
   SLIDE_INDEX: 'ironpt__slide-index',
   COVER: 'ironpt__cover',
+  CENTER: 'ironpt__center',
   H1: 'ironpt__h1',
   H2: 'ironpt__h2',
   P: 'ironpt__p',

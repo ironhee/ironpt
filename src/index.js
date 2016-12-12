@@ -1,6 +1,7 @@
 export Code from './Code'
 export Controller from './Controller'
 export Cover from './Cover'
+export Center from './Center'
 export H1 from './H1'
 export H2 from './H2'
 export Li from './Li'

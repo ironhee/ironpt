@@ -47,6 +47,11 @@ const base = (
       [QUERY_SELECTORS.P]: {
         margin: 0,
         padding: 0
+      },
+      [QUERY_SELECTORS.CENTER]: {
+        textAlign: "center",
+        margin: 0,
+        padding: 0
       }
     }}
   />

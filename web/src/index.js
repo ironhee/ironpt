@@ -5,6 +5,7 @@ import {
   Presentation,
   Slide,
   Cover,
+  Center,
   H1,
   H2,
   Ul,
@@ -151,6 +152,16 @@ const slide = (
           <H1>H1 Result</H1>
           <H2>H2 Result</H2>
         </Cover>
+      </Slide>
+
+      <Slide>
+        <H1>H1 Result</H1>
+        <Center>
+          <Ul>
+            <Li>Li Result1</Li>
+            <Li>Li Result2</Li>
+          </Ul>
+        </Center>
       </Slide>
 
       {/* END */}
